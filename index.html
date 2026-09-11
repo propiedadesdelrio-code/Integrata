@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Integrata - Centro de Referência em Saúde Odontológica. Atendimento odontológico de excelência em São Paulo. Agende sua consulta: (11) 2538-3681" />
+  <title>Integrata | Centro de Referência em Saúde Odontológica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0a7ea4;
+      --primary-dark: #065f7a;
+      --primary-light: #e6f4f9;
+      --accent: #22c1c3;
+      --dark: #0f2830;
+      --gray: #5a6b72;
+      --light: #f7fafb;
+      --white: #ffffff;
+      --shadow: 0 10px 40px rgba(10, 126, 164, 0.12);
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(10, 126, 164, 0.08);
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(10, 126, 164, 0.3);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text strong {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      font-size: 0.65rem;
+      color: var(--gray);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .nav-cta {
+      background: var(--primary) !important;
+      color: white !important;
+      font-weight: 600 !important;
+      padding: 10px 20px !important;
+      box-shadow: 0 4px 14px rgba(10, 126, 164, 0.35);
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark) !important;
+      transform: translateY(-1px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .mobile-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      margin-top: 76px;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, #f0f9fc 0%, #e6f4f9 50%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -150px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(34, 193, 195, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -250px;
+      left: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(10, 126, 164, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid rgba(10, 126, 164, 0.15);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 32px;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 6px 20px rgba(10, 126, 164, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(10, 126, 164, 0.45);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--dark);
+      border: 1.5px solid rgba(10, 126, 164, 0.2);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .hero-card-header h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .hero-card-header p {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(10, 126, 164, 0.08);
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stat-value {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--dark);
+      text-align: right;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 90px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      font-size: 1.05rem;
+    }
+
+    /* ===== SERVICES ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid rgba(10, 126, 164, 0.1);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: transparent;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--primary-light);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    .about-features {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .about-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.7rem;
+      margin-top: 2px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .info-list .info-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: var(--primary-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .info-list .info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-list .info-text strong {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .info-list .info-text span {
+      font-size: 0.92rem;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .info-list .info-text a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .info-list .info-text a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .contact-info > p {
+      color: var(--gray);
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px;
+      background: var(--light);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--dark);
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .contact-method:hover {
+      background: white;
+      border-color: rgba(10, 126, 164, 0.15);
+      transform: translateX(4px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-method .cm-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-method .cm-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-method .cm-text strong {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .contact-method .cm-text span {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .contact-form {
+      background: white;
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(10, 126, 164, 0.08);
+    }
+
+    .contact-form h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-form > p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid rgba(10, 126, 164, 0.15);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--dark);
+      background: var(--light);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(10, 126, 164, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 60px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .logo-text strong {
+      color: white;
+    }
+
+    .footer-brand .logo-text span {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-brand p {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 340px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-col li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom .cnpj {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ===== FLOATING WHATSAPP ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 968px) {
+      .hero-container,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-card {
+        max-width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px 24px 28px;
+        gap: 4px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        align-items: stretch;
+      }
+
+      nav ul.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      nav a {
+        display: block;
+        padding: 14px 16px;
+        font-size: 1rem;
+      }
+
+      .nav-cta {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 28px;
+      }
+
+      .hero-card {
+        padding: 28px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#inicio" class="logo">
+        <div class="logo-icon">I</div>
+        <div class="logo-text">
+          <strong>Integrata</strong>
+          <span>Saúde Odontológica</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul id="navMenu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Especialidades</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#contato" class="nav-cta">Agendar Consulta</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Centro de Referência em Saúde Odontológica
+        </div>
+        <h1>
+          Seu sorriso em <span class="highlight">boas mãos</span> desde 2013
+        </h1>
+        <p>
+          A Integrata é referência em atendimento odontológico de excelência em São Paulo.
+          Cuidamos da sua saúde bucal com tecnologia, precisão e um olhar humano para cada paciente.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contato" class="btn btn-primary">
+            Agendar Consulta
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#servicos" class="btn btn-outline">
+            Nossas Especialidades
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-icon">🦷</div>
+            <div>
+              <h3>Atendimento Integrado</h3>
+              <p>Saúde bucal completa em um só lugar</p>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-label">📍 Localização</span>
+            <span class="stat-value">Água Branca – SP</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">📞 Telefone</span>
+            <span class="stat-value">(11) 2538-3681</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">🕐 Atendimento</span>
+            <span class="stat-value">Seg a Sáb</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">⭐ Experiência</span>
+            <span class="stat-value">Desde 2013</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="servicos">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Especialidades</span>
+        <h2>Tratamentos odontológicos completos</h2>
+        <p>Oferecemos uma gama de procedimentos para cuidar da saúde e da estética do seu sorriso.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <div class="service-icon">🦷</div>
+          <h3>Atividade Odontológica</h3>
+          <p>Atendimento odontológico geral com foco em prevenção, diagnóstico e tratamento das principais condições bucais.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">🔬</div>
+          <h3>Diagnóstico e Prevenção</h3>
+          <p>Avaliações completas, limpeza profissional, aplicação de flúor e orientação para manter sua saúde bucal em dia.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">✨</div>
+          <h3>Estética Dental</h3>
+          <p>Procedimentos estéticos para transformar seu sorriso, com técnicas modernas e resultados naturais.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">🔧</div>
+          <h3>Reabilitação Oral</h3>
+          <p>Tratamentos para restaurar função e estética, devolvendo qualidade de vida e confiança ao sorrir.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">👶</div>
+          <h3>Odontopediatria</h3>
+          <p>Cuidado especializado para crianças, com atendimento acolhedor e focado no desenvolvimento saudável.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">🩺</div>
+          <h3>Atendimento Clínico</h3>
+          <p>Consultas, restaurações, extrações e demais procedimentos clínicos realizados com precisão e segurança.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content fade-up">
+          <span class="section-tag">Sobre a Integrata</span>
+          <h2>Mais de uma década cuidando de sorrisos</h2>
+          <p>
+            A <strong>Integrata – Centro de Referência em Saúde Odontológica</strong> atua desde 2013
+            oferecendo atendimento odontológico de qualidade na cidade de São Paulo.
+          </p>
+          <p>
+            Nossa missão é proporcionar saúde bucal com excelência, unindo tecnologia, profissionais
+            qualificados e um atendimento humanizado para cada paciente.
+          </p>
+
+          <ul class="about-features">
+            <li>
+              <span class="check">✓</span>
+              <span>Profissionais especializados e atualizados</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Equipamentos modernos e ambiente acolhedor</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Atendimento personalizado para cada necessidade</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Localização de fácil acesso na Água Branca – SP</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-card fade-up">
+          <h3>📋 Informações da Clínica</h3>
+          <ul class="info-list">
+            <li>
+              <span class="info-icon">🏢</span>
+              <div class="info-text">
+                <strong>Razão Social</strong>
+                <span>Integrata Centro de Referência em Saúde Odontológica Ltda.</span>
+              </div>
+            </li>
+            <li>
+              <span class="info-icon">📄</span>
+              <div class="info-text">
+                <strong>CNPJ</strong>
+                <span>18.811.074/0001-73</span>
+              </div>
+            </li>
+            <li>
+              <span class="info-icon">📅</span>
+              <div class="info-text">
+                <strong>Data de Abertura</strong>
+                <span>12/08/2013</span>
+              </div>
+            </li>
+            <li>
+              <span class="info-icon">📍</span>
+              <div class
