@@ -3,981 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Integrata - Centro de Referência em Saúde Odontológica. Atendimento odontológico de excelência em São Paulo. Agende sua consulta: (11) 2538-3681" />
-  <title>Integrata | Centro de Referência em Saúde Odontológica</title>
+  <meta name="description" content="Integrata - Centro de Referência em Saúde Odontológica. Atendimento odontológico de excelência em São Paulo desde 2013. Agende sua consulta: (11) 2538-3681" />
+  <meta name="keywords" content="dentista, odontologia, saúde bucal, São Paulo, Água Branca, Integrata, clínica odontológica" />
+  <meta name="author" content="Integrata" />
+  <meta name="theme-color" content="#0a7ea4" />
+  <title>Integrata | Centro de Referência em Saúde Odontológica em São Paulo</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #0a7ea4;
-      --primary-dark: #065f7a;
-      --primary-light: #e6f4f9;
-      --accent: #22c1c3;
-      --dark: #0f2830;
-      --gray: #5a6b72;
-      --light: #f7fafb;
-      --white: #ffffff;
-      --shadow: 0 10px 40px rgba(10, 126, 164, 0.12);
-      --radius: 16px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--dark);
-      background: var(--white);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(10, 126, 164, 0.08);
-      transition: var(--transition);
-    }
-
-    header.scrolled {
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--dark);
-    }
-
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 12px rgba(10, 126, 164, 0.3);
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .logo-text strong {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .logo-text span {
-      font-size: 0.65rem;
-      color: var(--gray);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 8px;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--gray);
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: var(--transition);
-    }
-
-    nav a:hover {
-      color: var(--primary);
-      background: var(--primary-light);
-    }
-
-    .nav-cta {
-      background: var(--primary) !important;
-      color: white !important;
-      font-weight: 600 !important;
-      padding: 10px 20px !important;
-      box-shadow: 0 4px 14px rgba(10, 126, 164, 0.35);
-    }
-
-    .nav-cta:hover {
-      background: var(--primary-dark) !important;
-      transform: translateY(-1px);
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .mobile-toggle span {
-      width: 24px;
-      height: 2px;
-      background: var(--dark);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      margin-top: 76px;
-      min-height: calc(100vh - 76px);
-      display: flex;
-      align-items: center;
-      background: linear-gradient(160deg, #f0f9fc 0%, #e6f4f9 50%, #ffffff 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px;
-      right: -150px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(34, 193, 195, 0.12) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -250px;
-      left: -200px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(10, 126, 164, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 24px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: white;
-      border: 1px solid rgba(10, 126, 164, 0.15);
-      padding: 8px 16px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 24px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    }
-
-    .hero-badge .dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.2); }
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
-
-    .hero h1 .highlight {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--gray);
-      margin-bottom: 32px;
-      max-width: 520px;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 6px 20px rgba(10, 126, 164, 0.35);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(10, 126, 164, 0.45);
-    }
-
-    .btn-outline {
-      background: white;
-      color: var(--dark);
-      border: 1.5px solid rgba(10, 126, 164, 0.2);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-card {
-      background: white;
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-      width: 100%;
-      max-width: 420px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .hero-card-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--primary-light);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-
-    .hero-card-header h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .hero-card-header p {
-      font-size: 0.8rem;
-      color: var(--gray);
-      margin: 0;
-    }
-
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(10, 126, 164, 0.08);
-    }
-
-    .stat-row:last-child {
-      border-bottom: none;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--gray);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .stat-value {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--dark);
-      text-align: right;
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 90px 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 56px;
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 16px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
-
-    .section-header p {
-      color: var(--gray);
-      font-size: 1.05rem;
-    }
-
-    /* ===== SERVICES ===== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      background: white;
-      border: 1px solid rgba(10, 126, 164, 0.1);
-      border-radius: var(--radius);
-      padding: 32px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: var(--transition);
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-      border-color: transparent;
-    }
-
-    .service-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .service-icon {
-      width: 56px;
-      height: 56px;
-      background: var(--primary-light);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      font-size: 0.92rem;
-      color: var(--gray);
-      line-height: 1.6;
-    }
-
-    /* ===== ABOUT ===== */
-    .about {
-      background: var(--light);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-content h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    .about-content p {
-      color: var(--gray);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-
-    .about-features {
-      list-style: none;
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .about-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .check {
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 0.7rem;
-      margin-top: 2px;
-    }
-
-    .info-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 36px;
-      box-shadow: var(--shadow);
-    }
-
-    .info-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .info-list li {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .info-list .info-icon {
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
-      background: var(--primary-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-    }
-
-    .info-list .info-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .info-list .info-text strong {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .info-list .info-text span {
-      font-size: 0.92rem;
-      color: var(--dark);
-      font-weight: 500;
-    }
-
-    .info-list .info-text a {
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .info-list .info-text a:hover {
-      color: var(--primary);
-    }
-
-    /* ===== CONTACT ===== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 50px;
-    }
-
-    .contact-info h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 18px;
-      line-height: 1.2;
-    }
-
-    .contact-info > p {
-      color: var(--gray);
-      margin-bottom: 32px;
-      font-size: 1rem;
-    }
-
-    .contact-methods {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .contact-method {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 18px;
-      background: var(--light);
-      border-radius: 14px;
-      text-decoration: none;
-      color: var(--dark);
-      transition: var(--transition);
-      border: 1px solid transparent;
-    }
-
-    .contact-method:hover {
-      background: white;
-      border-color: rgba(10, 126, 164, 0.15);
-      transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    }
-
-    .contact-method .cm-icon {
-      width: 48px;
-      height: 48px;
-      min-width: 48px;
-      background: white;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    .contact-method .cm-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-method .cm-text strong {
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .contact-method .cm-text span {
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
-
-    .contact-form {
-      background: white;
-      border-radius: var(--radius);
-      padding: 40px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(10, 126, 164, 0.08);
-    }
-
-    .contact-form h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .contact-form > p {
-      color: var(--gray);
-      font-size: 0.9rem;
-      margin-bottom: 28px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--dark);
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 13px 16px;
-      border: 1.5px solid rgba(10, 126, 164, 0.15);
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 0.92rem;
-      color: var(--dark);
-      background: var(--light);
-      transition: var(--transition);
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--primary);
-      background: white;
-      box-shadow: 0 0 0 4px rgba(10, 126, 164, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .contact-form .btn {
-      width: 100%;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--dark);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 60px 0 28px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 50px;
-      margin-bottom: 40px;
-    }
-
-    .footer-brand .logo-text strong {
-      color: white;
-    }
-
-    .footer-brand .logo-text span {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .footer-brand p {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      max-width: 340px;
-    }
-
-    .footer-col h4 {
-      color: white;
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer-col a {
-      color: rgba(255, 255, 255, 0.65);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-
-    .footer-col a:hover {
-      color: var(--accent);
-    }
-
-    .footer-col li {
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8rem;
-    }
-
-    .footer-bottom .cnpj {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* ===== FLOATING WHATSAPP ===== */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 60px;
-      height: 60px;
-      background: #25d366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-      z-index: 999;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
-    }
-
-    .whatsapp-float svg {
-      width: 30px;
-      height: 30px;
-      fill: white;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 968px) {
-      .hero-container,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .hero-visual {
-        order: -1;
-      }
-
-      .hero-card {
-        max-width: 100%;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .mobile-toggle {
-        display: flex;
-      }
-
-      nav ul {
-        position: fixed;
-        top: 76px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 20px 24px 28px;
-        gap: 4px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transform: translateY(-120%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        align-items: stretch;
-      }
-
-      nav ul.open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-
-      nav a {
-        display: block;
-        padding: 14px 16px;
-        font-size: 1rem;
-      }
-
-      .nav-cta {
-        text-align: center;
-        margin-top: 8px;
-      }
-
-      section {
-        padding: 70px 0;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-form {
-        padding: 28px;
-      }
-
-      .hero-card {
-        padding: 28px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    /* ===== ANIMATIONS ===== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">
+    <div class="topbar-container">
+      <div class="topbar-left">
+        <span class="topbar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Av. Marquês de São Vicente, 2219 – Água Branca, SP
+        </span>
+        <span class="topbar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Seg a Sáb – 08h às 19h
+        </span>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:+551125383681" class="topbar-item topbar-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (11) 2538-3681
+        </a>
+        <a href="mailto:registro@healthcarecontabilidade.com.br" class="topbar-item topbar-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          E-mail
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== HEADER ===== -->
   <header id="header">
     <div class="nav-container">
       <a href="#inicio" class="logo">
-        <div class="logo-icon">I</div>
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C9 2 7 3 7 6c0 2 .5 3.5 1 5.5.5 2 .5 4-.5 5.5-.7 1-1 2-1 3 0 1.5 1 2 2 2 1.5 0 2-1.5 2.5-3 .3-1 .5-1.5 1-1.5s.7.5 1 1.5c.5 1.5 1 3 2.5 3 1 0 2-.5 2-2 0-1-.3-2-1-3-1-1.5-1-3.5-.5-5.5.5-2 1-3.5 1-5.5 0-3-2-4-5-4z"/>
+          </svg>
+        </div>
         <div class="logo-text">
           <strong>Integrata</strong>
           <span>Saúde Odontológica</span>
@@ -988,13 +62,18 @@
         <ul id="navMenu">
           <li><a href="#inicio">Início</a></li>
           <li><a href="#servicos">Especialidades</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
           <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li><a href="#contato" class="nav-cta">Agendar Consulta</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato" class="nav-cta">
+            Agendar
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a></li>
         </ul>
       </nav>
 
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -1004,55 +83,161 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          Centro de Referência em Saúde Odontológica
+          <span class="badge-icon">⭐</span>
+          Referência em Odontologia desde 2013
         </div>
         <h1>
-          Seu sorriso em <span class="highlight">boas mãos</span> desde 2013
+          Seu sorriso merece o cuidado de quem é <span class="highlight">referência em saúde odontológica</span>
         </h1>
         <p>
-          A Integrata é referência em atendimento odontológico de excelência em São Paulo.
-          Cuidamos da sua saúde bucal com tecnologia, precisão e um olhar humano para cada paciente.
+          Na <strong>Integrata</strong> unimos tecnologia de ponta, profissionais especializados e atendimento humanizado
+          para transformar a sua experiência com o dentista. Agende agora e descubra por que somos referência em São Paulo.
         </p>
+
         <div class="hero-buttons">
           <a href="#contato" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Agendar Consulta
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#servicos" class="btn btn-outline">
-            Nossas Especialidades
+          <a href="https://wa.me/551125383681" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.87 11.87 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.45-8.42zM12.04 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.98 1-3.63-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.93 9.9zm5.44-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+            WhatsApp
           </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <strong>+12</strong>
+            <span>Anos de experiência</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <strong>+10mil</strong>
+            <span>Sorrisos cuidados</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <strong>4.9★</strong>
+            <span>Avaliação dos pacientes</span>
+          </div>
         </div>
       </div>
 
       <div class="hero-visual">
         <div class="hero-card">
           <div class="hero-card-header">
-            <div class="hero-card-icon">🦷</div>
+            <div class="hero-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+            </div>
             <div>
-              <h3>Atendimento Integrado</h3>
-              <p>Saúde bucal completa em um só lugar</p>
+              <h3>Agende sua Consulta</h3>
+              <p>Atendimento rápido e humanizado</p>
             </div>
           </div>
 
           <div class="stat-row">
-            <span class="stat-label">📍 Localização</span>
+            <span class="stat-label">
+              <span class="stat-icon">📍</span>
+              Localização
+            </span>
             <span class="stat-value">Água Branca – SP</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">📞 Telefone</span>
+            <span class="stat-label">
+              <span class="stat-icon">📞</span>
+              Telefone
+            </span>
             <span class="stat-value">(11) 2538-3681</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">🕐 Atendimento</span>
+            <span class="stat-label">
+              <span class="stat-icon">🕐</span>
+              Atendimento
+            </span>
             <span class="stat-value">Seg a Sáb</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">⭐ Experiência</span>
+            <span class="stat-label">
+              <span class="stat-icon">⭐</span>
+              Experiência
+            </span>
             <span class="stat-value">Desde 2013</span>
+          </div>
+
+          <a href="#contato" class="hero-card-cta">
+            Solicitar agendamento
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="floating-badge floating-badge-1">
+          <div class="fb-icon">🏆</div>
+          <div class="fb-text">
+            <strong>Excelência</strong>
+            <span>em atendimento</span>
+          </div>
+        </div>
+
+        <div class="floating-badge floating-badge-2">
+          <div class="fb-icon">🦷</div>
+          <div class="fb-text">
+            <strong>+10.000</strong>
+            <span>sorrisos transformados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES STRIP -->
+    <div class="features-strip">
+      <div class="features-strip-container">
+        <div class="feature-strip-item">
+          <div class="fs-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <strong>Ambiente Seguro</strong>
+            <span>Protocolos rigorosos</span>
+          </div>
+        </div>
+
+        <div class="feature-strip-item">
+          <div class="fs-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong>Atendimento Ágil</strong>
+            <span>Sem longas esperas</span>
+          </div>
+        </div>
+
+        <div class="feature-strip-item">
+          <div class="fs-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <strong>Equipe Especializada</strong>
+            <span>Profissionais qualificados</span>
+          </div>
+        </div>
+
+        <div class="feature-strip-item">
+          <div class="fs-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <strong>Alta Satisfação</strong>
+            <span>4.9 estrelas de avaliação</span>
           </div>
         </div>
       </div>
@@ -1060,49 +245,161 @@
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section id="servicos">
+  <section id="servicos" class="services-section">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="section-tag">Especialidades</span>
-        <h2>Tratamentos odontológicos completos</h2>
-        <p>Oferecemos uma gama de procedimentos para cuidar da saúde e da estética do seu sorriso.</p>
+        <span class="section-tag">Nossas Especialidades</span>
+        <h2>Tratamentos odontológicos <span class="text-gradient">completos</span></h2>
+        <p>Oferecemos uma gama completa de procedimentos para cuidar da saúde e da estética do seu sorriso, com tecnologia de ponta e profissionais especializados.</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card fade-up">
-          <div class="service-icon">🦷</div>
+        <div class="service-card fade-up" style="--card-color: #0a7ea4; --card-color-light: #e6f4f9;">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C9 2 7 3 7 6c0 2 .5 3.5 1 5.5.5 2 .5 4-.5 5.5-.7 1-1 2-1 3 0 1.5 1 2 2 2 1.5 0 2-1.5 2.5-3 .3-1 .5-1.5 1-1.5s.7.5 1 1.5c.5 1.5 1 3 2.5 3 1 0 2-.5 2-2 0-1-.3-2-1-3-1-1.5-1-3.5-.5-5.5.5-2 1-3.5 1-5.5 0-3-2-4-5-4z"/>
+            </svg>
+          </div>
           <h3>Atividade Odontológica</h3>
           <p>Atendimento odontológico geral com foco em prevenção, diagnóstico e tratamento das principais condições bucais.</p>
+          <a href="#contato" class="service-link">
+            Saiba mais
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
-        <div class="service-card fade-up">
-          <div class="service-icon">🔬</div>
+        <div class="service-card fade-up" style="--card-color: #7c3aed; --card-color-light: #f3e8ff;">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <path d="M11 8v6M8 11h6"/>
+            </svg>
+          </div>
           <h3>Diagnóstico e Prevenção</h3>
           <p>Avaliações completas, limpeza profissional, aplicação de flúor e orientação para manter sua saúde bucal em dia.</p>
+          <a href="#contato" class="service-link">
+            Saiba mais
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
-        <div class="service-card fade-up">
-          <div class="service-icon">✨</div>
+        <div class="service-card fade-up" style="--card-color: #ec4899; --card-color-light: #fce7f3;">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0-6 6c0 3 3 5 3 8 0 1 .5 2 1.5 2S12 18 12 17s1.5-2 1.5 0 .5 2 1.5 2 1.5-1 1.5-2c0-3 3-5 3-8a6 6 0 0 0-6-6z"/>
+            </svg>
+          </div>
           <h3>Estética Dental</h3>
-          <p>Procedimentos estéticos para transformar seu sorriso, com técnicas modernas e resultados naturais.</p>
+          <p>Procedimentos estéticos modernos como clareamento, lentes de contato dental e harmonização do sorriso.</p>
+          <a href="#contato" class="service-link">
+            Saiba mais
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
-        <div class="service-card fade-up">
-          <div class="service-icon">🔧</div>
+        <div class="service-card fade-up" style="--card-color: #f59e0b; --card-color-light: #fef3c7;">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
           <h3>Reabilitação Oral</h3>
           <p>Tratamentos para restaurar função e estética, devolvendo qualidade de vida e confiança ao sorrir.</p>
+          <a href="#contato" class="service-link">
+            Saiba mais
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
-        <div class="service-card fade-up">
-          <div class="service-icon">👶</div>
+        <div class="service-card fade-up" style="--card-color: #06b6d4; --card-color-light: #cffafe;">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/>
+              <path d="M20 21a8 8 0 0 0-16 0"/>
+              <circle cx="18" cy="6" r="2"/>
+              <circle cx="6" cy="6" r="2"/>
+            </svg>
+          </div>
           <h3>Odontopediatria</h3>
           <p>Cuidado especializado para crianças, com atendimento acolhedor e focado no desenvolvimento saudável.</p>
+          <a href="#contato" class="service-link">
+            Saiba mais
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
-        <div class="service-card fade-up">
-          <div class="service-icon">🩺</div>
+        <div class="service-card fade-up" style="--card-color: #10b981; --card-color-light: #d1fae5;">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
           <h3>Atendimento Clínico</h3>
           <p>Consultas, restaurações, extrações e demais procedimentos clínicos realizados com precisão e segurança.</p>
+          <a href="#contato" class="service-link">
+            Saiba mais
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIFERENCIAIS ===== -->
+  <section id="diferenciais" class="diferenciais-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Por que escolher a Integrata</span>
+        <h2>Nossos <span class="text-gradient">diferenciais</span></h2>
+        <p>Mais do que uma clínica odontológica, somos um centro de referência em saúde bucal. Conheça o que nos torna únicos.</p>
+      </div>
+
+      <div class="diferenciais-grid">
+        <div class="diferencial-card fade-up">
+          <div class="diferencial-number">01</div>
+          <div class="diferencial-icon" style="background: linear-gradient(135deg, #0a7ea4, #22c1c3);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>Equipe Multidisciplinar</h3>
+          <p>Profissionais especializados em diferentes áreas da odontologia trabalhando juntos pelo seu sorriso.</p>
+        </div>
+
+        <div class="diferencial-card fade-up">
+          <div class="diferencial-number">02</div>
+          <div class="diferencial-icon" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3>Tecnologia Avançada</h3>
+          <p>Equipamentos modernos de diagnóstico e tratamento para resultados mais precisos e confortáveis.</p>
+        </div>
+
+        <div class="diferencial-card fade-up">
+          <div class="diferencial-number">03</div>
+          <div class="diferencial-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <h3>Atendimento Humanizado</h3>
+          <p>Cada paciente é único. Tratamos todos com atenção, respeito e cuidado personalizado.</p>
+        </div>
+
+        <div class="diferencial-card fade-up">
+          <div class="diferencial-number">04</div>
+          <div class="diferencial-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Localização Privilegiada</h3>
+          <p>Fácil acesso na Água Branca, com transporte público e estacionamento nas proximidades.</p>
         </div>
       </div>
     </div>
@@ -1114,7 +411,7 @@
       <div class="about-grid">
         <div class="about-content fade-up">
           <span class="section-tag">Sobre a Integrata</span>
-          <h2>Mais de uma década cuidando de sorrisos</h2>
+          <h2>Mais de uma década <span class="text-gradient">cuidando de sorrisos</span></h2>
           <p>
             A <strong>Integrata – Centro de Referência em Saúde Odontológica</strong> atua desde 2013
             oferecendo atendimento odontológico de qualidade na cidade de São Paulo.
@@ -1126,48 +423,577 @@
 
           <ul class="about-features">
             <li>
-              <span class="check">✓</span>
-              <span>Profissionais especializados e atualizados</span>
+              <span class="check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Profissionais especializados e em constante atualização</span>
             </li>
             <li>
-              <span class="check">✓</span>
+              <span class="check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
               <span>Equipamentos modernos e ambiente acolhedor</span>
             </li>
             <li>
-              <span class="check">✓</span>
+              <span class="check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
               <span>Atendimento personalizado para cada necessidade</span>
             </li>
             <li>
-              <span class="check">✓</span>
+              <span class="check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
               <span>Localização de fácil acesso na Água Branca – SP</span>
             </li>
           </ul>
+
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong>+12</strong>
+              <span>Anos de história</span>
+            </div>
+            <div class="about-stat">
+              <strong>+10mil</strong>
+              <span>Pacientes atendidos</span>
+            </div>
+            <div class="about-stat">
+              <strong>100%</strong>
+              <span>Dedicação</span>
+            </div>
+          </div>
         </div>
 
         <div class="info-card fade-up">
-          <h3>📋 Informações da Clínica</h3>
+          <div class="info-card-header">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3>Informações da Clínica</h3>
+          </div>
+
           <ul class="info-list">
             <li>
-              <span class="info-icon">🏢</span>
+              <span class="info-icon" style="background: linear-gradient(135deg, #0a7ea4, #22c1c3);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+              </span>
               <div class="info-text">
                 <strong>Razão Social</strong>
                 <span>Integrata Centro de Referência em Saúde Odontológica Ltda.</span>
               </div>
             </li>
             <li>
-              <span class="info-icon">📄</span>
+              <span class="info-icon" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              </span>
               <div class="info-text">
                 <strong>CNPJ</strong>
                 <span>18.811.074/0001-73</span>
               </div>
             </li>
             <li>
-              <span class="info-icon">📅</span>
+              <span class="info-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </span>
               <div class="info-text">
                 <strong>Data de Abertura</strong>
                 <span>12/08/2013</span>
               </div>
             </li>
             <li>
-              <span class="info-icon">📍</span>
-              <div class
+              <span class="info-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div class="info-text">
+                <strong>Endereço</strong>
+                <span>Av. Marquês de São Vicente, 2219 – Conj. 604 e 606<br>Água Branca, São Paulo – SP<br>CEP: 05036-040</span>
+              </div>
+            </li>
+            <li>
+              <span class="info-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </span>
+              <div class="info-text">
+                <strong>CNAE Principal</strong>
+                <span>86.30-5-04 – Atividade Odontológica</span>
+              </div>
+            </li>
+          </ul>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Marques+de+Sao+Vicente+2219+Agua+Branca+Sao+Paulo" target="_blank" rel="noopener" class="info-card-cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ver no Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESSO / COMO FUNCIONA ===== -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Como Funciona</span>
+        <h2>Simples, rápido e <span class="text-gradient">sem complicação</span></h2>
+        <p>Em apenas 3 passos você agenda sua consulta e começa a cuidar do seu sorriso.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card fade-up">
+          <div class="process-step">1</div>
+          <div class="process-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3>Entre em contato</h3>
+          <p>Ligue, envie mensagem no WhatsApp ou preencha o formulário. Estamos prontos para te atender.</p>
+        </div>
+
+        <div class="process-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="process-card fade-up">
+          <div class="process-step">2</div>
+          <div class="process-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <path d="m9 16 2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Agende sua consulta</h3>
+          <p>Escolha o melhor dia e horário para você. Confirmamos rapidamente a sua agenda.</p>
+        </div>
+
+        <div class="process-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="process-card fade-up">
+          <div class="process-step">3</div>
+          <div class="process-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <h3>Cuide do seu sorriso</h3>
+          <p>Venha nos visitar e receba um atendimento personalizado, humano e de excelência.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section id="depoimentos" class="testimonials-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Depoimentos</span>
+        <h2>O que nossos <span class="text-gradient">pacientes dizem</span></h2>
+        <p>A satisfação de quem confia na Integrata é o nosso maior orgulho.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Atendimento impecável desde a recepção até o procedimento. Profissionais atenciosos e ambiente muito agradável. Recomendo de olhos fechados!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #0a7ea4, #22c1c3);">MS</div>
+            <div class="author-info">
+              <strong>Mariana Silva</strong>
+              <span>Paciente desde 2018</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Levei meu filho de 5 anos e fiquei impressionada com o cuidado da equipe. Ele saiu sorrindo e pedindo para voltar. Nota 10!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">CS</div>
+            <div class="author-info">
+              <strong>Carlos Santos</strong>
+              <span>Papel do paciente</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Fiz uma reabilitação completa e o resultado superou todas as minhas expectativas. Voltei a sorrir com confiança. Obrigada, Integrata!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #ec4899, #f472b6);">AP</div>
+            <div class="author-info">
+              <strong>Ana Paula</strong>
+              <span>Paciente desde 2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Perguntas Frequentes</span>
+        <h2>Tire suas <span class="text-gradient">dúvidas</span></h2>
+        <p>Reunimos as perguntas mais comuns dos nossos pacientes. Não encontrou o que procura? Fale com a gente.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Como faço para agendar uma consulta?</span>
+            <span class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Você pode agendar pelo telefone (11) 2538-3681, pelo WhatsApp ou preenchendo o formulário em nossa página de contato. Nossa equipe confirmará o melhor dia e horário para você.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Quais são os horários de atendimento?</span>
+            <span class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Atendemos de segunda a sábado, das 08h às 19h. Recomendamos agendar previamente para garantir o horário de sua preferência.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Vocês atendem convênios ou planos odontológicos?</span>
+            <span class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Para saber sobre convênios aceitos e formas de pagamento, entre em contato diretamente com nossa recepção pelo telefone ou WhatsApp. Teremos prazer em informar todas as opções disponíveis.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Onde a Integrata está localizada?</span>
+            <span class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Estamos na Av. Marquês de São Vicente, 2219 – Conj. 604 e 606, Água Branca, São Paulo – SP, CEP 05036-040. Local de fácil acesso, próximo a estações de metrô e com estacionamento nas proximidades.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Crianças podem ser atendidas na clínica?</span>
+            <span class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! Contamos com atendimento em odontopediatria, com profissionais especializados e ambiente acolhedor para que as crianças se sintam confortáveis e seguras.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question" aria-expanded="false">
+            <span>Quais especialidades são oferecidas?</span>
+            <span class="faq-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Oferecemos atendimento odontológico geral, diagnóstico e prevenção, estética dental, reabilitação oral, odontopediatria e demais procedimentos clínicos, sempre com foco no seu bem-estar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content fade-up">
+        <div class="cta-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C9 2 7 3 7 6c0 2 .5 3.5 1 5.5.5 2 .5 4-.5 5.5-.7 1-1 2-1 3 0 1.5 1 2 2 2 1.5 0 2-1.5 2.5-3 .3-1 .5-1.5 1-1.5s.7.5 1 1.5c.5 1.5 1 3 2.5 3 1 0 2-.5 2-2 0-1-.3-2-1-3-1-1.5-1-3.5-.5-5.5.5-2 1-3.5 1-5.5 0-3-2-4-5-4z"/>
+          </svg>
+        </div>
+        <h2>Pronto para transformar o seu sorriso?</h2>
+        <p>Agende agora sua consulta e descubra por que somos referência em saúde odontológica em São Paulo.</p>
+        <div class="cta-buttons">
+          <a href="#contato" class="btn btn-white">
+            Agendar Consulta
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+551125383681" class="btn btn-outline-white">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (11) 2538-3681
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contato" class="contact-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Fale Conosco</span>
+        <h2>Entre em <span class="text-gradient">contato</span></h2>
+        <p>Estamos prontos para atender você e cuidar da sua saúde bucal com toda a atenção que você merece.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <div class="contact-methods">
+            <a href="tel:+551125383681" class="contact-method">
+              <div class="cm-icon" style="background: linear-gradient(135deg, #0a7ea4, #22c1c3);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="cm-text">
+                <strong>Telefone</strong>
+                <span>(11) 2538-3681</span>
+              </div>
+              <span class="cm-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+
+            <a href="https://wa.me/551125383681" target="_blank" rel="noopener" class="contact-method">
+              <div class="cm-icon" style="background: linear-gradient(135deg, #25d366, #128c7e);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M20.52 3.48A11.87 11.87 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.45-8.42z"/></svg>
+              </div>
+              <div class="cm-text">
+                <strong>WhatsApp</strong>
+                <span>Fale conosco agora mesmo</span>
+              </div>
+              <span class="cm-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+
+            <a href="mailto:registro@healthcarecontabilidade.com.br" class="contact-method">
+              <div class="cm-icon" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="cm-text">
+                <strong>E-mail</strong>
+                <span>registro@healthcarecontabilidade.com.br</span>
+              </div>
+              <span class="cm-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Marques+de+Sao+Vicente+2219+Agua+Branca+Sao+Paulo" target="_blank" rel="noopener" class="contact-method">
+              <div class="cm-icon" style="background: linear-gradient(135deg, #ec4899, #f472b6);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="cm-text">
+                <strong>Endereço</strong>
+                <span>Av. Marquês de São Vicente, 2219 – Água Branca, SP</span>
+              </div>
+              <span class="cm-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          </div>
+
+          <div class="contact-info-box">
+            <div class="ci-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Horário de Atendimento</strong>
+              <span>Segunda a Sábado – 08h às 19h</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form fade-up" id="contactForm" novalidate>
+          <div class="form-header">
+            <div class="form-header-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3>Solicite seu agendamento</h3>
+            <p>Preencha o formulário abaixo e nossa equipe entrará em contato para confirmar sua consulta.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" required placeholder="seu@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone *</label>
+              <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="especialidade">Especialidade de interesse</label>
+            <select id="especialidade" name="especialidade">
+              <option value="">Selecione uma opção</option>
+              <option>Atividade Odontológica</option>
+              <option>Diagnóstico e Prevenção</option>
+              <option>Estética Dental</option>
+              <option>Reabilitação Oral</option>
+              <option>Odontopediatria</option>
+              <option>Atendimento Clínico</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Conte-nos brevemente o que você precisa..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Enviar solicitação
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+
+          <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+
+          <p class="form-privacy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Seus dados estão seguros e não serão compartilhados.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C9 2 7 3 7 6c0 2 .5 3.5 1 5.5.5 2 .5 4-.5 5.5-.7 1-1 2-1 3 0 1.5 1 2 2 2 1.5 0 2-1.5 2.5-3 .3-1 .5-1.5 1-1.5s.7.5 1 1.5c.5 1.5 1 3 2.5 3 1 0 2-.5 2-2 0-1-.3-2-1-3-1-1.5-1-3.5-.5-5.5.5-2 1-3.5 1-5.5 0-3-2-4-5-4z"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <strong>Integrata</strong>
+              <span>Saúde Odontológica</span>
+            </div>
+          </div>
+          <p>
+            Centro de Referência em Saúde Odontológica. Atendimento de excelência em São Paulo
+            desde 2013, cuidando da saúde bucal de toda a família.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://wa.me/551125383681" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.87 11.87 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.45-8.42z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Especialidades</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a href="tel:+551125383681">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (11) 2538-3681
+              </a>
+            </li>
+            <li>
+              <a href="mailto:registro@healthcarecontabilidade.com.br">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                E-mail
+              </a>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Av. Marquês de São Vicente, 2219<br>Conj. 604 e 606 – Água Branca<br>São Paulo – SP – 05036-040
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Integrata – Todos os direitos reservados.</span>
+        <span class="cnpj">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+          CNPJ: 18.811.074/0001-73
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/551125383681" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.52 3.48A11.87 11.87 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.45-8.42zM12.04 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.98 1-3.63-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.93 9.9zm5.44-7.42c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/>
+    </svg>
+    <span class="whatsapp-pulse"></span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
