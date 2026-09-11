@@ -1,17 +1,15 @@
 /* =========================================================
-   INTEGRATA - Scripts
+   INTEGRATA - Scripts Aprimorados
    ========================================================= */
 
 (function () {
   'use strict';
 
-  /* ===== ANO DINÂMICO NO FOOTER ===== */
+  /* ===== ANO DINÂMICO ===== */
   const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ===== HEADER: SCROLL SHADOW ===== */
+  /* ===== HEADER SCROLL ===== */
   const header = document.getElementById('header');
   const onScroll = () => {
     if (window.scrollY > 10) {
@@ -34,7 +32,6 @@
       mobileToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Fecha o menu ao clicar em um link
     navMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
@@ -43,7 +40,6 @@
       });
     });
 
-    // Fecha o menu ao clicar fora
     document.addEventListener('click', (e) => {
       if (
         navMenu.classList.contains('open') &&
@@ -57,7 +53,7 @@
     });
   }
 
-  /* ===== SCROLL SUAVE (fallback para navegadores antigos) ===== */
+  /* ===== SCROLL SUAVE ===== */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -67,7 +63,7 @@
       if (!target) return;
 
       e.preventDefault();
-      const headerOffset = 76;
+      const headerOffset = 90;
       const elementPosition = target.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset + 1;
 
@@ -78,7 +74,7 @@
     });
   });
 
-  /* ===== ANIMAÇÕES FADE-UP (IntersectionObserver) ===== */
+  /* ===== ANIMAÇÕES FADE-UP ===== */
   const fadeElements = document.querySelectorAll('.fade-up');
 
   if ('IntersectionObserver' in window) {
@@ -91,24 +87,20 @@
           }
         });
       },
-      {
-        threshold: 0.12,
-        rootMargin: '0px 0px -60px 0px'
-      }
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     );
 
     fadeElements.forEach((el) => observer.observe(el));
   } else {
-    // Fallback para navegadores antigos
     fadeElements.forEach((el) => el.classList.add('visible'));
   }
 
-  /* ===== LINK ATIVO NO MENU CONFORME SCROLL ===== */
+  /* ===== LINK ATIVO NO MENU ===== */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('#navMenu a[href^="#"]');
 
   const setActiveLink = () => {
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 130;
     let currentId = '';
 
     sections.forEach((section) => {
@@ -119,26 +111,115 @@
 
     navLinks.forEach((link) => {
       const href = link.getAttribute('href');
-      link.classList.toggle('active', href === `#${currentId}` && !link.classList.contains('nav-cta'));
+      link.classList.toggle(
+        'active',
+        href === `#${currentId}` && !link.classList.contains('nav-cta')
+      );
     });
   };
 
   window.addEventListener('scroll', setActiveLink, { passive: true });
   setActiveLink();
 
+  /* ===== FAQ ACCORDION ===== */
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const question = item.querySelector('.faq-question');
+    if (!question) return;
+
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Fecha todos os outros
+      document.querySelectorAll('.faq-item.open').forEach((other) => {
+        if (other !== item) {
+          other.classList.remove('open');
+          const q = other.querySelector('.faq-question');
+          if (q) q.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Alterna o atual
+      item.classList.toggle('open', !isOpen);
+      question.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  /* ===== CONTADORES ANIMADOS ===== */
+  const animateCounter = (el, target, duration = 1800) => {
+    const isDecimal = target.toString().includes('.');
+    const start = 0;
+    const startTime = performance.now();
+
+    const step = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // easing
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = start + (target - start) * eased;
+
+      if (isDecimal) {
+        el.textContent = current.toFixed(1).replace('.', ',');
+      } else {
+        el.textContent = Math.floor(current).toLocaleString('pt-BR');
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        if (isDecimal) {
+          el.textContent = target.toFixed(1).replace('.', ',');
+        } else {
+          el.textContent = target.toLocaleString('pt-BR');
+        }
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const statElements = document.querySelectorAll('.about-stat strong');
+  if (statElements.length && 'IntersectionObserver' in window) {
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const text = el.textContent.replace(/[^\d.,]/g, '').replace(',', '.');
+            const match = text.match(/(\d+(?:\.\d+)?)/);
+            if (match) {
+              const target = parseFloat(match[1]);
+              const prefix = el.textContent.startsWith('+') ? '+' : '';
+              const suffix = el.textContent.replace(/[+\d.,]/g, '');
+              el.dataset.original = el.textContent;
+              animateCounter(el, target);
+              // Mantém prefixo/sufixo
+              const observerCheck = setInterval(() => {
+                if (el.textContent === target.toLocaleString('pt-BR') || parseFloat(el.textContent.replace('.', '').replace(',', '.')) >= target) {
+                  el.textContent = prefix + el.textContent + suffix;
+                  clearInterval(observerCheck);
+                }
+              }, 100);
+            }
+            statsObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    statElements.forEach((el) => statsObserver.observe(el));
+  }
+
   /* ===== MÁSCARA DE TELEFONE ===== */
   const telefoneInput = document.getElementById('telefone');
   if (telefoneInput) {
     telefoneInput.addEventListener('input', (e) => {
       let value = e.target.value.replace(/\D/g, '');
-
       if (value.length > 11) value = value.slice(0, 11);
 
       if (value.length > 10) {
-        // (11) 99999-9999
         value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
       } else if (value.length > 6) {
-        // (11) 9999-9999
         value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
       } else if (value.length > 2) {
         value = value.replace(/^(\d{2})(\d{0,5}).*/, '($1) $2');
@@ -159,7 +240,6 @@
       if (!feedback) return;
       feedback.textContent = message;
       feedback.className = `form-feedback ${type}`;
-      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     };
 
     const clearFeedback = () => {
@@ -171,9 +251,7 @@
     const validateField = (field) => {
       let valid = true;
 
-      if (field.hasAttribute('required') && !field.value.trim()) {
-        valid = false;
-      }
+      if (field.hasAttribute('required') && !field.value.trim()) valid = false;
 
       if (field.type === 'email' && field.value.trim()) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -189,7 +267,6 @@
       return valid;
     };
 
-    // Validação em tempo real (blur)
     form.querySelectorAll('input, textarea').forEach((field) => {
       field.addEventListener('blur', () => validateField(field));
       field.addEventListener('input', () => {
@@ -213,7 +290,6 @@
         return;
       }
 
-      // Simula envio (aqui você pode integrar com backend/API)
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalHTML = submitBtn.innerHTML;
       submitBtn.disabled = true;
@@ -228,13 +304,12 @@
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalHTML;
 
-        // Limpa mensagem após 6 segundos
         setTimeout(clearFeedback, 6000);
       }, 1200);
     });
   }
 
-  /* ===== EFEITO PARALLAX SUAVE NO HERO ===== */
+  /* ===== PARALLAX SUAVE NO HERO ===== */
   const hero = document.querySelector('.hero');
   if (hero && window.matchMedia('(min-width: 968px)').matches) {
     window.addEventListener(
@@ -242,14 +317,17 @@
       () => {
         const scrolled = window.scrollY;
         if (scrolled < window.innerHeight) {
-          hero.style.backgroundPositionY = `${scrolled * 0.3}px`;
+          const shapes = hero.querySelectorAll('.shape');
+          shapes.forEach((shape, i) => {
+            shape.style.transform = `translateY(${scrolled * (0.1 + i * 0.05)}px)`;
+          });
         }
       },
       { passive: true }
     );
   }
 
-  /* ===== LOG DE BOAS-VINDAS ===== */
+  /* ===== LOG ===== */
   console.log(
     '%c🦷 Integrata – Centro de Referência em Saúde Odontológica',
     'color: #0a7ea4; font-size: 14px; font-weight: bold;'
